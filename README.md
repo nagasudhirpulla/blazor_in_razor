@@ -1,10 +1,10 @@
 ## Introduction
 This is a demo project that adds Blazor Webassembly components to a non-SPA Razor pages application
 
-## Steps
-* Create a Blazor Webassembly application with seperate project for webassembly components
+## Steps to Include Blazor components in a Razor Pages project
+* Create a Blazor Webassembly project. While creating, enable the option for ASP.Net Core Hosted so that a seperate project for webassembly components is created
 * Delete the Blazor server project
-* In Blazor webassembly client project, comment out the line `builder.RootComponents.Add<App>("#app");` of Program.cs file. This avoids the blazor WASM to search for a div named `app` while loading.
+* In Blazor webassembly components project, comment out the line `builder.RootComponents.Add<App>("#app");` of Program.cs file. This avoids the blazor WASM to search for a div named `app` while loading.
 * Delete favicon.ico file from the blazor WASM client project's wwwroot folder since it will create conflicting asset error while running server
 * Create a Razor pages / ASP.NET Core Web App project in the solution
 * Add a Nuget package `Microsoft.AspNetCore.Components.WebAssembly.Server` to the razor pages project
